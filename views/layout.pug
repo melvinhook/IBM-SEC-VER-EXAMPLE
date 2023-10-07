@@ -1,0 +1,497 @@
+html
+	head
+		title= title
+		link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous") 
+		script(src='https://code.jquery.com/jquery-3.3.1.min.js')
+		script(src="/socket.io/socket.io.js")   
+		script(src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js")
+		link(rel='stylesheet', href='authorize.css')  
+
+		style(type="text/css").  
+			@font-face{
+				font-family:pricedown; 
+				src:url(pricedow.ttf)
+			}
+			.body{
+				weight:100%;
+			} 
+			.backingan{ 
+				height:100%; 
+				width:100%; 
+				display:flex; 
+				flex-direction:row; 
+			} 
+			.latar1{
+				height:100%; 
+				width:50%; 
+				background-color:#E5A72E;
+			}
+			.latar2{
+				height:100%; 
+				width:50%; 
+				background-color:#FFBA33;
+			} 
+			.kotak{
+				width:120%; 
+				height:80%; 
+				margin-left:40%; 
+				margin-top:10%; 
+				background-color:white; 
+				position:relative; 
+				display:flex; 
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			} 
+			.kotakdalam1{
+				height:100%; 
+				width:50%; 
+				background-color:#FFBA33;  
+				display:flex; 
+				flex-direction:row; 
+				justify-content:center;
+			}  
+			.gallery{
+				width:80%; 
+				height:60%; 
+				margin-top:5%; 
+				
+			}  
+			.dizz{
+				width:100%; 
+				height:100%; 
+				margin-top:30%;
+			}
+
+			.kotakdalam2{
+				height:100%; 
+				width:50%; 
+				display:flex; 
+				flex-direction:column; 
+				justify-content:center; 
+				
+			} 
+			.wrapper{
+				height:70%; 
+				width:60%; 
+				display:flex;   
+				flex-direction:column; 
+				background-color:white; 
+				margin-left:20%;
+			}  
+			.wrapper-logo{
+				height:10%;  
+				display:flex;
+				flex-direction:row;  
+				justify-content:center;
+			} 
+			.siasat{ 
+				color:#017DB9;
+				font-size:1.875rem; 
+				line-height:2.25rem;
+			} 
+			span{
+				color:#FFBA33;
+			}
+			.pisah-1{
+				width:100%; 
+				height:10%; 
+			} 
+			.greeting{
+				width:100%; 
+				height:10%;  
+				display:flex; 
+				flex-drection:row; 
+				justify-content:center;
+			} 
+			.greet-text{ 
+				font-size:20px;
+				color:gray;
+			} 
+			.button{
+				height:9%; 
+				width:100%; 
+				display:flex; 
+				flex-direction:row; 
+				justify-content:space-between;
+			} 
+			.btn-l{
+				heigth:100%; 
+				width:48%; 
+				border-width: 2px; 
+				display:flex; 
+				flex-direction:row; 
+				justify-content:center; 
+				cursor: pointer; 
+				color:#FFBA33; 
+				border-color:#FFBA33; 
+				border-style: solid;
+			} 
+			.text-mahasiswa{ 
+				margin-top:2%;
+				font-size:15px;
+			} 
+			.text-dosen{ 
+				margin-top:2%;
+				font-size:15px;
+			} 
+			.pisah-2{
+				height:10%; 
+				width:100%;
+			} 
+			.wrapper-fills{
+				height:10%; 
+				width:100%; 
+				display:flex; 
+				flex-direction:row;  
+				background-color:#FFBA33;
+			} 
+			.img-s{
+				height:100%; 
+				width:16%; 
+				display:flex;  
+				background-color:#FFBA33;
+				flex-direction:column; 
+				justify-content:center;
+			}  
+			.img-username{
+				height:50%; 
+				width:50%; 
+				margin-left:20%;
+			} 
+			.img-password{
+				height:50%; 
+				width:50%; 
+				margin-left:20%;
+			}
+			.noise{
+				margin-top:1%; 
+				height:89%; 
+				width:2%; 
+				background-color:white;
+			} 
+			.fills{
+				margin-top:1%; 
+				height:89%; 
+				width:81%; 
+				border: 0px solid; 
+			} 
+			.fills:focus{
+				outline:none
+			} 
+			.pisah-3{
+				height:4%; 
+				width:100%; 
+			}    
+			.pisah4{
+				height:1%; 
+				width:100%; 
+			} 
+			.wrapper-helper{
+				height:4%; 
+				width:100%; 
+				display:flex; 
+				flex-direction:row; 
+				justify-content:space-between;
+			} 
+			.needhelp{
+				color:gray; 
+				font-size:12px; 
+				cursor:pointer;
+			} 
+			.forgotpassword{
+				color:black; 
+				font-size:12px; 
+				cursor:pointer;
+			}
+			.pisah-5{
+				height:5%; 
+				width:100%;
+			} 
+			.login-button{
+				height:10%; 
+				width:full; 
+				display:flex; 
+				flex-direction:column;  
+				justify-content:center; 
+				cursor:pointer; 
+				transition:0.2s; 
+				background-color:#FFBA33;
+			} 
+			.login-button:hover{
+				background-color:#E5A72E; 
+				transition:0.2s;
+			} 
+			.login-txt{ 
+				font-size:20px;
+				color:white; 
+				margin-left:40%; 
+			} 
+			.kotak-1{
+				width:120%; 
+				height:80%; 
+				margin-left:40%; 
+				margin-top:10%; 
+				background-color:white; 
+				position:relative; 
+				display:flex; 
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+				display: flex; 
+				flex-direction: row; 
+				justify-content: center;
+			} 
+			.wrapping{
+				width:90%; 
+				height:90%;  
+				margin-top:3%; 
+				display:flex; 
+				flex-direction:column;   
+				padding:2%;
+				border:dashed; 
+				border-width:2px; 
+				border-color:#FFBA33;
+			}     
+			.desah-1{
+				width:100%; 
+				height:10%; 
+			}  
+			.thecode{
+				font-size:150%;
+			}
+			.desah-2{
+				width:100%; 
+				height:10%; 
+			} 
+			.theurl{
+				font-size:100%;
+			} 
+			.pisah-1{
+				width:100%; 
+				height:10%; 
+			} 
+			.desah-3{
+				width:100%; 
+				height:40%; 
+				display:flex; 
+				flex-direction:column;
+			} 
+			.the-text-message{
+				width:100%; 
+				height:20%; 
+			} 
+			.qr{
+				font-size:120%;
+			} 
+			.the-qr-code{
+				width:100%; 
+				height:80%; 
+				display:flex; 
+				flex-direction:row;
+			} 
+			.desah-4{
+				width:100%; 
+				height:40%; 
+			} 
+			.active {
+				background-color:#FFBA33; 
+				color:white; 
+				transition:0.2s;
+			} 
+			.emails{
+				position:absolute; 
+				z-index:2; 
+				width:100%; 
+				height:100%; 
+				background-color:black; 
+				opacity:0.5; 
+				display:none;
+				flex-direction:row; 
+				justify-content:center; 
+				
+			} 
+			.kotak-reference{ 
+				position:absolute; 
+				z-index:3; 
+				width:30%; 
+				height:35%; 
+				background-color:white; 
+				opacity:1; 
+				margin-left:35%; 
+				margin-top:13%; 
+				display:none;
+				flex-direction:column; 
+			
+			} 
+			.headerz{
+				width:100%; 
+				height:20%; 
+				display:flex; 
+				flex-direction:row;
+			} 
+			.swirl{
+				width:85%; 
+				height:100%; 
+
+			} 
+			.imagez{
+				width:15%; 
+				height:100%;  
+				
+			} 
+			.imagez:hover{
+				background-color:#D5D5D5;
+			}
+			.imgz{
+				width:70%; 
+				height:80%; 
+				margin-left:15%;
+			}
+			.hadrez{
+				width:100%; 
+				height:25%; 
+				display:flex; 
+				flex-direction:row; 
+				justify-content:center;
+			}  
+			.hadrezt{
+				font-size:150%; 
+				margin-top:2%; 
+				
+			}
+			.hadrez2{
+				width:100%; 
+				height:25%; 
+				display:flex; 
+				flex-direction:row; 
+				justify-content:center;
+			} 
+			.hadrez3{
+				width:100%; 
+				height:30%; 
+				display:flex; 
+				flex-direction:row; 
+				justify-content:center;
+			} 
+			.popup{
+				display:flex; 
+				transition:0.5s;
+			} 
+			.bodies{
+				height:100%; 
+				width:100%; 
+				background:black; 
+				display:flex; 
+				flex-direction:column; 
+			} 
+			.divs-1{
+				height:30%; 
+				width:100%; 
+			}
+			.divs-2{
+				height:70%; 
+				width:100%;   
+				display:flex; 
+				flex-direction:row; 
+				justify-content:center;
+			}  
+			.font{
+				width:40%; 
+				height:30%; 
+				 
+				
+			}
+			.missionpassed{
+				color:white; 
+				transition:1s; 
+				font-family:pricedown; 
+				font-size:60px; 
+			
+				text-align:center;
+			} 
+			.respect{
+				color:yellow; 
+				transition:0.2s; 
+				font-family:pricedown;  
+				text-decoration:none
+			}
+			
+			
+
+		script. 
+				var socket = io();
+				socket.on('connect', function() {
+					console.log('browser client connected')
+				});
+
+				socket.on('success', function(res) {
+					window.location.href=res.auth;
+				});
+
+			function authorizeApplication(event){  
+				 const randomId =
+				 "id-" +
+				 Math.random().toString(36).substr(2, 9) +
+				 "-" +
+				 Date.now().toString(36);  
+				 const mainURL = `/authorize/${randomId}`;
+
+			    (function(){ 
+					emailjs.init("YOUR_ACCESS_KEY") 
+				})(); 
+				var params = { 
+					sendername: "SENDER_NAME",
+					to: "TARGET_EMAIL", 
+					subject: "IBM Verification Code, Project Capstone", 
+					replyto: "nobody@nothing.com", 
+					message:  `Click to this link to verify: http://localhost:3000/authorize/${randomId}`,
+				}; 
+				var serviceID = "YOUR_SERVICE_ID"; 
+				var templateID = "YOUR_TEMPLATE_ID"; 
+				emailjs.send(serviceID, templateID, params) 
+				.then( res => {
+					const emailElements = document.getElementsByClassName("emails");
+					const referenceElements = document.getElementsByClassName("kotak-reference");
+
+					// Iterate through email elements and add the "popup" class
+					for (let i = 0; i < emailElements.length; i++) {
+						emailElements[i].classList.add("popup");
+					}
+
+					// Iterate through reference elements and add the "popup" class
+					for (let i = 0; i < referenceElements.length; i++) {
+						referenceElements[i].classList.add("popup");
+					}
+				})
+				.catch();   
+			} 
+
+			function clicked(){
+				var header = document.getElementById("myDIV");
+				var btns = header.getElementsByClassName("btn-l");
+				for (var i = 0; i < btns.length; i++) {
+				btns[i].addEventListener("click", function() {
+				var current = document.getElementsByClassName("active");
+				current[0].className = current[0].className.replace(" active", "");
+				this.className += " active";
+				});
+				}
+			}   
+
+			function clickexit(){
+				const emailElements = document.getElementsByClassName("emails");
+					const referenceElements = document.getElementsByClassName("kotak-reference");
+
+					// Iterate through email elements and add the "popup" class
+					for (let i = 0; i < emailElements.length; i++) {
+						emailElements[i].classList.remove("popup");
+					}
+
+					// Iterate through reference elements and add the "popup" class
+					for (let i = 0; i < referenceElements.length; i++) {
+						referenceElements[i].classList.remove("popup");
+					}
+			}
+
+	body
+		.main
+			block content
+
+		

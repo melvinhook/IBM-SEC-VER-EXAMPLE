@@ -1,0 +1,30 @@
+extends layout.pug 
+
+block content
+		div.backingan
+			div.latar1 
+				div.kotak-1
+					div.wrapping
+						div.desah-1 
+							h1.thecode this is your code <strong>#{userCode}</strong>
+
+						div.desah-2 
+							h1.theurl  Go to the following url #[a(href=verificationUri target='_blank') #{verificationUri}]  
+						
+						if qrCode
+							div.pisah-1 
+
+							div.desah-3 
+								div.the-text-message 
+									h1.qr Or scan the qr code below! 
+
+								div.the-qr-code 
+									img(src=`data:image;base64, ${qrCode}`) 
+
+							div.desah-4 
+								.row
+									.col-md-6
+										p Upon successful completion the user has authenticated and the device has been authorized. You can switch back to this tab to verify the authenticated users info.
+
+
+			div.latar2

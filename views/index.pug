@@ -1,0 +1,79 @@
+extends layout.pug 
+
+
+block content 
+	div.backingan
+		div.latar1  
+			div.emails
+				 
+			div.kotak-reference
+				div.headerz 
+						div.swirl 
+
+						div.imagez(onclick="clickexit")   
+							img(src='exit.png' alt="exit").imgz
+
+				div.hadrez 
+					h1.hadrezt Your Email Has Been Sent!
+
+				div.hadrez2   
+					p.hadrezt2 Please check your email, and follow the link!</br>Don't close this window until you came back 
+
+				div.hadrez3 
+					img.imgerz(src='dog.png' alt="dog")
+
+			div.kotak
+				div.kotakdalam1 
+					div.gallery 
+						img.dizz(src="DEZZAIN.png" rel="desain")
+					
+				div.kotakdalam2 
+					div.wrapper 
+						div.wrapper-logo 
+							h1.siasat Sia.<span>Sat</span> 
+
+						div.pisah-1  
+
+						div.greeting 
+							h1.greet-text Welcome Back! 
+
+						div.button(id="myDIV") 
+							div.btn-l.active(id="mahasiswa" onclick="clicked()") 
+								h1.text-mahasiswa Mahasiswa 
+
+							div.btn-l(id="dosen" onclick="clicked()") 
+								h1.text-dosen Dosen 
+
+						div.pisah-2 
+
+						div.wrapper-fills
+							div.img-s 
+								img.img-username(src='user.png', alt="...")
+
+							div.noise 
+
+							input(type="username").fills 
+						
+						div.pisah-3 
+						
+						div.wrapper-fills
+							div.img-s 
+								img(src='padlock.png' alt="lock").img-password
+
+							div.noise 
+
+							input(type="password").fills 
+
+						div.pisah-4 
+
+						div.wrapper-helper 
+							h1.needhelp Need help? 
+
+							h1.forgotpassword Forgot Password 
+
+						div.pisah-5 
+						
+						div.login-button 
+							h1.login-txt(onclick='authorizeApplication(event)') Login
+
+		div.latar2
